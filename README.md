@@ -10,7 +10,7 @@
 
 ### Use the JavaScript Console to Check the Value of a Variable
 
-Use the ```javascript console.log()``` method to print the value of the variable ```javascript a``` where noted in the code.
+Use the ```console.log()``` method to print the value of the variable ```a``` where noted in the code.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget nibh scelerisque, mollis diam ac, aliquet est. Curabitur tempor odio ante, quis sollicitudin urna ornare vel. Sed tempor ultrices lacus, quis congue tellus. Pellentesque vulputate, velit at lobortis lobortis, justo lectus interdum mauris, et maximus diam purus sed sapien. Morbi vitae egestas diam. Vestibulum vehicula venenatis lorem. Vestibulum id ornare mauris. Cras finibus, turpis quis congue tincidunt, diam massa commodo ligula, ut ullamcorper elit augue et felis. Duis pretium ipsum sapien, quis dignissim lorem convallis ac.
 
