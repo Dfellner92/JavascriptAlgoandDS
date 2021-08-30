@@ -3,10 +3,8 @@
 ## Table of Contents
 
 1. [Debugging](#debugging)
-2. [Basic Data Structures](#basicdatastructures)
-3. [Basic Algorithm Scripting](#basicalgorithmscripting)
-
-
+2. [Basic Data Structures](#basic-data-structures)
+3. [Basic Algorithm Scripting](#basic-algorithm-scripting)
 
 ## **Debugging**
 
@@ -24,7 +22,7 @@ Etiam eu risus et sapien malesuada efficitur vel eu neque. Sed sit amet fermentu
 
 Cras posuere mauris vitae eleifend molestie. Nulla ac libero velit. Mauris non neque dapibus, ornare dolor placerat, pharetra turpis. Phasellus dictum massa odio, ullamcorper sollicitudin metus tempor non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse magna eros, sagittis et luctus a, volutpat ut risus. Sed eget ex purus.
 
-## Basic Data Structures
+## **Basic Data Structures**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget nibh scelerisque, mollis diam ac, aliquet est. Curabitur tempor odio ante, quis sollicitudin urna ornare vel. Sed tempor ultrices lacus, quis congue tellus. Pellentesque vulputate, velit at lobortis lobortis, justo lectus interdum mauris, et maximus diam purus sed sapien. Morbi vitae egestas diam. Vestibulum vehicula venenatis lorem. Vestibulum id ornare mauris. Cras finibus, turpis quis congue tincidunt, diam massa commodo ligula, ut ullamcorper elit augue et felis. Duis pretium ipsum sapien, quis dignissim lorem convallis ac.
 
@@ -36,6 +34,4 @@ Etiam eu risus et sapien malesuada efficitur vel eu neque. Sed sit amet fermentu
 
 Cras posuere mauris vitae eleifend molestie. Nulla ac libero velit. Mauris non neque dapibus, ornare dolor placerat, pharetra turpis. Phasellus dictum massa odio, ullamcorper sollicitudin metus tempor non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse magna eros, sagittis et luctus a, volutpat ut risus. Sed eget ex purus.
 
-## Basic Algorithm Scripting
-
-
+## **Basic Algorithm Scripting**
