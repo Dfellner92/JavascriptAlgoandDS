@@ -40,6 +40,16 @@ Fix the condition so the program runs the right branch, and the appropriate valu
 
 ## **Basic Data Structures**
 
+### Iterate Through All an Array's Items Using For Loops
 
+We have defined a function, ```filteredArray```, which takes ```arr```, a nested array, and ```elem``` as arguments, and returns a new array. ```elem``` represents an element that may or may not be present on one or more of the arrays nested within ```arr```. Modify the function, using a ```for``` loop, to return a filtered version of the passed array such that any array nested within ```arr``` containing ```elem``` has been removed.
+
+### Create complex multi-dimensional arrays
+
+We have defined a variable, ```myNestedArray```, set equal to an array. Modify ```myNestedArray```, using any combination of strings, numbers, and booleans for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string ```deep```, on the fourth level, include the string ```deeper```, and on the fifth level, include the string ```deepest```.
+
+### Add Key-Value Pairs to JavaScript Objects
+
+A ```foods``` object has been created with three entries. Using the syntax of your choice, add three more entries to it: ```bananas``` with a value of ```13```, grapes with a value of ```35```, and ```strawberries``` with a value of ```27```.
 
 ## **Basic Algorithm Scripting**
