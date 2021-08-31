@@ -1,6 +1,6 @@
 # Javascript Algorithms and Data Structures FCC
 
-## Table of Contents
+### Table of Contents
 
 1. [Debugging](#debugging)
 2. [Basic Data Structures](#basic-data-structures)
