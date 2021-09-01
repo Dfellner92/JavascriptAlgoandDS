@@ -64,3 +64,29 @@ function findLongestWordLength(str) {
 console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
 ```
 
+### Return Largest Numbers in Arrays
+
+Return an array consisting of the largest number from each provided sub-array. 
+
+```javascript 
+
+
+```
+
+### Confirm the Ending
+
+Check if a string (first argument, ```str```) ends with the given target string (second argument, ```target```).
+
+This challenge can be solved with the ```.endsWith()``` method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+
+```javascript
+function confirmEnding(str, target) {
+  if (str.substring(str.length - target.length) == target) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+confirmEnding("Bastian", "n");
+```
