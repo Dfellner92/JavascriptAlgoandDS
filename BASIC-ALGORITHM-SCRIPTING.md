@@ -90,3 +90,42 @@ function confirmEnding(str, target) {
 
 confirmEnding("Bastian", "n");
 ```
+
+### Repeat a String Repeat a String
+
+Repeat a given string ```str``` (first argument) for ```num``` times (second argument). Return an empty string if ```num``` is not a positive number. For the purpose of this challenge, do not use the built-in ```.repeat()``` method.
+
+```javascript
+function repeatStringNumTimes(str, num) {
+  if (num <= 0) {
+    return "";
+  } else {
+    str = str + repeatStringNumTimes(str, num -1);
+  }
+  return str;
+}
+
+console.log(repeatStringNumTimes("abc", 3));
+```
+
+### Truncate a String
+
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ```...``` ending.
+
+```javascript
+function truncateString(str, num) {
+  if (str.slice(0, num) == str) {
+    return str;
+  } else {
+  return str.slice(0, num) + "...";
+
+  }
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+```
+
+### Finders Keepers
+
+Create a function that looks through an array ```arr``` and returns the first element in it that passes a 'truth test'. This means that given an element ```x```, the 'truth test' is passed if ```func(x)``` is ```true```. If no element passes the test, return ```undefined```.
+
