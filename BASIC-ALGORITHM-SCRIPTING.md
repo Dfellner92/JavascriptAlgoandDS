@@ -129,3 +129,60 @@ console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
 
 Create a function that looks through an array ```arr``` and returns the first element in it that passes a 'truth test'. This means that given an element ```x```, the 'truth test' is passed if ```func(x)``` is ```true```. If no element passes the test, return ```undefined```.
 
+```javascript 
+
+```
+
+### Boo who
+
+Check if a value is classified as a boolean primitive. Return ```true``` or ```false```.
+
+```javascript
+function booWho(bool) {
+  if (bool === true || bool === false) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(booWho(null));
+```
+
+### Title Case a Sentence
+
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+```javascript
+function titleCase(str) {
+  let strArr = str.split(' ');
+  let strArr2 = [];
+  for (let i = 0; i < strArr.length; i++) {
+    strArr2.push(strArr[i][0].toUpperCase() + strArr[i].slice(1).toLowerCase());
+  }
+  return strArr2.join(' ');
+}
+
+console.log(titleCase("I'm a little tea pot"));
+```
+
+### Slice and Splice
+
+You are given two arrays and an index.
+
+Copy each element of the first array into the second array, in order.
+
+Begin inserting elements at index ```n``` of the second array.
+
+Return the resulting array. The input arrays should remain the same after the function runs.
+
+```javascript
+
+```
+
+### Falsy Bouncer
+Remove all falsy values from an array.
+
+Falsy values in JavaScript are ```false```, ```null```, ```0```, ```""```, ```undefined```, and ```NaN```.
+
+Hint: Try converting each value to a Boolean.
