@@ -1,6 +1,6 @@
 ### Use Prototype Properties to Reduce Duplicate Code
 
-Add a ```numLegs``` property to the ```prototype``` of ```Dog```
+Add a `numLegs` property to the `prototype` of `Dog`
 
 ```javascript
 function Dog(name) {
@@ -15,9 +15,9 @@ let beagle = new Dog("Snoopy");
 
 ### Iterate Over All Properties
 
-Add all of the own properties of ```beagle``` to the array ```ownProps```. Add all of the ```prototype``` properties of ```Dog``` to the array ```prototypeProps```.
+Add all of the own properties of `beagle` to the array `ownProps`. Add all of the `prototype` properties of `Dog` to the array `prototypeProps`.
 
-```javascript 
+```javascript
 function Dog(name) {
   this.name = name;
 }
@@ -41,7 +41,7 @@ for (let property in beagle) {
 
 ### Understand the Constructor Property
 
-Write a ```joinDogFraternity``` function that takes a ```candidate``` parameter and, using the ```constructor``` property, return ```true``` if the candidate is a ```Dog```, otherwise return ```false```.
+Write a `joinDogFraternity` function that takes a `candidate` parameter and, using the `constructor` property, return `true` if the candidate is a `Dog`, otherwise return `false`.
 
 ```javascript
 function Dog(name) {
@@ -56,3 +56,47 @@ function joinDogFraternity(candidate) {
     return false;
   }
 ```
+
+### Change the Prototype to a New Object
+
+Add the property `numLegs` and the two methods `eat()` and `describe()` to the `prototype` of `Dog` by setting the `prototype` to a new object.
+
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  // Only change code below this line
+  numLegs: 4,
+  eat: function () {
+    console.log("eating");
+  },
+  describe: function () {
+    console.log("four legged");
+  },
+};
+```
+
+### Remember to Set the Constructor Property when Changing the Prototype
+
+Define the constructor property on the Dog prototype.
+
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+// Only change code below this line
+Dog.prototype = {
+  constructor: Dog,
+  numLegs: 4,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+  describe: function () {
+    console.log("My name is " + this.name);
+  },
+};
+```
+
