@@ -132,3 +132,65 @@ Dog.prototype.isPrototypeOf(beagle);  // yields true
 // Fix the code below so that it evaluates to true
 console.log(Object.prototype.isPrototypeOf(Dog.prototype));
 ```
+
+### Use Inheritance So You Don't Repeat Yourself
+
+The ```eat``` method is repeated in both ```Cat``` and ```Bear```. Edit the code in the spirit of DRY by moving the ```eat``` method to the ```Animal``` ```supertype```.
+
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Animal
+};
+
+function Cat (name) {
+  this._name = name;
+ }
+
+Cat.prototype = {
+  constructor: Animal,
+};
+```
+
+### Inherit Behaviors from a Supertype
+
+Use ```Object.create``` to make two instances of ```Animal``` named ```duck``` and ```beagle```.
+
+```javascript
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+// Only change code below this line
+
+let duck = Object.create(Animal.prototype); // Change this line
+let beagle = Object.create(Animal.prototype); // Change this line
+```
+
+### Set the Child's Prototype to an Instance of the Parent
+
+Modify the code so that instances of ```Dog``` inherit from ```Animal```.
+
+```javasript
+
+```
+
