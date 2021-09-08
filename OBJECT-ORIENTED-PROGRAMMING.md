@@ -102,7 +102,7 @@ Dog.prototype = {
 
 ### Understand Where an Object's Prototype Comes From
 
-Use ```isPrototypeOf``` to check the ```prototype``` of ```beagle```.
+Use `isPrototypeOf` to check the `prototype` of `beagle`.
 
 ```javascript
 function Dog(name) {
@@ -127,7 +127,7 @@ function Dog(name) {
 
 let beagle = new Dog("Snoopy");
 
-Dog.prototype.isPrototypeOf(beagle);  // yields true
+Dog.prototype.isPrototypeOf(beagle); // yields true
 
 // Fix the code below so that it evaluates to true
 console.log(Object.prototype.isPrototypeOf(Dog.prototype));
@@ -135,7 +135,7 @@ console.log(Object.prototype.isPrototypeOf(Dog.prototype));
 
 ### Use Inheritance So You Don't Repeat Yourself
 
-The ```eat``` method is repeated in both ```Cat``` and ```Bear```. Edit the code in the spirit of DRY by moving the ```eat``` method to the ```Animal``` ```supertype```.
+The `eat` method is repeated in both `Cat` and `Bear`. Edit the code in the spirit of DRY by moving the `eat` method to the `Animal` `supertype`.
 
 ```javascript
 function Animal(name) {
@@ -144,9 +144,9 @@ function Animal(name) {
 
 Animal.prototype = {
   constructor: Animal,
-  eat: function() {
+  eat: function () {
     console.log("nom nom nom");
-  }
+  },
 };
 
 function Bear(name) {
@@ -154,12 +154,12 @@ function Bear(name) {
 }
 
 Bear.prototype = {
-  constructor: Animal
+  constructor: Animal,
 };
 
-function Cat (name) {
+function Cat(name) {
   this._name = name;
- }
+}
 
 Cat.prototype = {
   constructor: Animal,
@@ -168,7 +168,27 @@ Cat.prototype = {
 
 ### Inherit Behaviors from a Supertype
 
-Use ```Object.create``` to make two instances of ```Animal``` named ```duck``` and ```beagle```.
+Use `Object.create` to make two instances of `Animal` named `duck` and `beagle`.
+
+```javascript
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+// Only change code below this line
+
+let duck = Object.create(Animal.prototype); // Change this line
+let beagle = Object.create(Animal.prototype); // Change this line
+```
+
+### Set the Child's Prototype to an Instance of the Parent
+
+Modify the code so that instances of `Dog` inherit from `Animal`.
 
 ```javascript
 function Animal() { }
@@ -180,17 +200,114 @@ Animal.prototype = {
   }
 };
 
+function Dog() { }
+
+// Only change code below this line
+Dog.prototype = Object.create(Animal.prototype)
+
+let beagle = new Dog();
+beagle.eat();
+```
+
+### Reset an Inherited Constructor Property
+
+Fix the code so ```duck.constructor``` and ```beagle.constructor``` return their respective constructors.
+
+```javascript
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
 // Only change code below this line
 
-let duck = Object.create(Animal.prototype); // Change this line
-let beagle = Object.create(Animal.prototype); // Change this line
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+let duck = new Bird();
+let beagle = new Dog();
 ```
 
-### Set the Child's Prototype to an Instance of the Parent
+### Add Methods After Inheritance
 
-Modify the code so that instances of ```Dog``` inherit from ```Animal```.
+Add all necessary code so the ```Dog``` object inherits from ```Animal``` and the ```Dog```'s ```prototype``` constructor is set to ```Dog```. Then add a ```bark()``` method to the ```Dog``` object so that ```beagle``` can both ```eat()``` and ```bark()```. The ```bark()``` method should print ```Woof!``` to the console.
 
-```javasript
+```javascript
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
 
+function Dog() { }
+
+// Only change code below this line
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function(){
+  console.log("Woof!");
+};
+
+let beagle = new Dog();
+beagle.eat();
+beagle.bark();
 ```
+
+### Override Inherited Methods
+
+Override the ```fly()``` method for ```Penguin``` so that it returns the string ```Alas, this is a flightless bird.```
+
+```javascript
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+
+Penguin.prototype.fly = function() {
+  return "Alas, this is a flightless bird.";
+}
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+```
+
+### Use a Mixin to Add Common Behavior Between Unrelated Objects
+
+Create a mixin named ```glideMixin``` that defines a method named ```glide```. Then use the ```glideMixin``` to give both ```bird``` and ```boat``` the ability to glide.
+
+```javascript 
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// Only change code below this line
+
+let glideMixin = function (obj) {
+  obj.glide = function() {
+    console.log("gliding!");
+  }
+};
+glideMixin(bird);
+glideMixin(boat);
+
+console.log(boat.glide(), bird.glide());
+```
+
+### Use Closure to Protect Properties Within an Object from Being Modified Externally
+
+Change how ```weight``` is declared in the ```Bird``` function so it is a private variable. Then, create a method ```getWeight``` that returns the value of ```weight``` 15.
 
