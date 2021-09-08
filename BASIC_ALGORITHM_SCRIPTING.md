@@ -2,11 +2,11 @@
 
 ### Convert Celsius to Fahrenheit
 
-You are given a variable ```celsius``` representing a temperature in Celsius. Use the variable ```fahrenheit``` already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit.
+You are given a variable `celsius` representing a temperature in Celsius. Use the variable `fahrenheit` already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit.
 
 ```javascript
 function convertToF(celsius) {
-  let fahrenheit = celsius * 9/5 + 32;
+  let fahrenheit = (celsius * 9) / 5 + 32;
   return fahrenheit;
 }
 
@@ -49,26 +49,28 @@ factorialize(5);
 
 Return the length of the longest word in the provided sentence.
 
-```javascript 
+```javascript
 function findLongestWordLength(str) {
   let stringArr = str.split(" ");
-  let longestWord = '';
+  let longestWord = "";
   for (let i = 0; i < stringArr.length; i++) {
     if (stringArr[i].length > longestWord.length) {
       longestWord = stringArr[i];
-    } 
+    }
   }
-  return longestWord.length; 
+  return longestWord.length;
 }
 
-console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+console.log(
+  findLongestWordLength("The quick brown fox jumped over the lazy dog")
+);
 ```
 
 ### Return Largest Numbers in Arrays
 
-Return an array consisting of the largest number from each provided sub-array. 
+Return an array consisting of the largest number from each provided sub-array.
 
-```javascript 
+```javascript
 function largestOfFour(arr) {
   let results = [];
   for (let i = 0; i < arr.length; i++) {
@@ -84,14 +86,21 @@ function largestOfFour(arr) {
   return results;
 }
 
-console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+console.log(
+  largestOfFour([
+    [4, 5, 1, 3],
+    [13, 27, 18, 26],
+    [32, 35, 37, 39],
+    [1000, 1001, 857, 1],
+  ])
+);
 ```
 
 ### Confirm the Ending
 
-Check if a string (first argument, ```str```) ends with the given target string (second argument, ```target```).
+Check if a string (first argument, `str`) ends with the given target string (second argument, `target`).
 
-This challenge can be solved with the ```.endsWith()``` method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+This challenge can be solved with the `.endsWith()` method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 
 ```javascript
 function confirmEnding(str, target) {
@@ -107,14 +116,14 @@ confirmEnding("Bastian", "n");
 
 ### Repeat a String Repeat a String
 
-Repeat a given string ```str``` (first argument) for ```num``` times (second argument). Return an empty string if ```num``` is not a positive number. For the purpose of this challenge, do not use the built-in ```.repeat()``` method.
+Repeat a given string `str` (first argument) for `num` times (second argument). Return an empty string if `num` is not a positive number. For the purpose of this challenge, do not use the built-in `.repeat()` method.
 
 ```javascript
 function repeatStringNumTimes(str, num) {
   if (num <= 0) {
     return "";
   } else {
-    str = str + repeatStringNumTimes(str, num -1);
+    str = str + repeatStringNumTimes(str, num - 1);
   }
   return str;
 }
@@ -124,15 +133,14 @@ console.log(repeatStringNumTimes("abc", 3));
 
 ### Truncate a String
 
-Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ```...``` ending.
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a `...` ending.
 
 ```javascript
 function truncateString(str, num) {
   if (str.slice(0, num) == str) {
     return str;
   } else {
-  return str.slice(0, num) + "...";
-
+    return str.slice(0, num) + "...";
   }
 }
 
@@ -141,9 +149,9 @@ console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
 
 ### Finders Keepers
 
-Create a function that looks through an array ```arr``` and returns the first element in it that passes a 'truth test'. This means that given an element ```x```, the 'truth test' is passed if ```func(x)``` is ```true```. If no element passes the test, return ```undefined```.
+Create a function that looks through an array `arr` and returns the first element in it that passes a 'truth test'. This means that given an element `x`, the 'truth test' is passed if `func(x)` is `true`. If no element passes the test, return `undefined`.
 
-```javascript 
+```javascript
 function findElement(arr, func) {
   for (let i = 0; i < arr.length; i++) {
     if (func(arr[i])) {
@@ -152,12 +160,12 @@ function findElement(arr, func) {
   }
 }
 
-console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
 ```
 
 ### Boo who
 
-Check if a value is classified as a boolean primitive. Return ```true``` or ```false```.
+Check if a value is classified as a boolean primitive. Return `true` or `false`.
 
 ```javascript
 function booWho(bool) {
@@ -177,12 +185,12 @@ Return the provided string with the first letter of each word capitalized. Make 
 
 ```javascript
 function titleCase(str) {
-  let strArr = str.split(' ');
+  let strArr = str.split(" ");
   let strArr2 = [];
   for (let i = 0; i < strArr.length; i++) {
     strArr2.push(strArr[i][0].toUpperCase() + strArr[i].slice(1).toLowerCase());
   }
-  return strArr2.join(' ');
+  return strArr2.join(" ");
 }
 
 console.log(titleCase("I'm a little tea pot"));
@@ -194,17 +202,24 @@ You are given two arrays and an index.
 
 Copy each element of the first array into the second array, in order.
 
-Begin inserting elements at index ```n``` of the second array.
+Begin inserting elements at index `n` of the second array.
 
 Return the resulting array. The input arrays should remain the same after the function runs.
 
 ```javascript
+function frankenSplice(arr1, arr2, n) {
+  let arr3 = [...arr2];
+  arr3.splice(n, 0, ...arr1);
+  return arr3;
+}
 
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
 ```
 
 ### Falsy Bouncer
+
 Remove all falsy values from an array.
 
-Falsy values in JavaScript are ```false```, ```null```, ```0```, ```""```, ```undefined```, and ```NaN```.
+Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
 
 Hint: Try converting each value to a Boolean.
