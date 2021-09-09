@@ -223,3 +223,21 @@ Remove all falsy values from an array.
 Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
 
 Hint: Try converting each value to a Boolean.
+
+```javascript
+function bouncer(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
+}
+
+console.log(bouncer([false, null, 0, NaN, undefined, ""]));
+```
+
+### Where do I Belong
+
+Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
