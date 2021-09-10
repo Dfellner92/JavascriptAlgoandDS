@@ -62,3 +62,42 @@ console.log(tea4GreenTeamFCC, tea4BlackTeamFCC);
 ```
 
 ### Understand the Hazards of Using Imperative Code
+
+### Avoid Mutations and Side Effects Using Functional Programming
+
+Fill in the code for the function ```incrementer``` so it returns the value of the global variable ```fixedValue``` increased by one.
+
+```javascript
+// The global variable
+var fixedValue = 4;
+
+function incrementer () {
+  // Only change code below this line
+  let inc = fixedValue + 1;
+  return inc;
+
+  // Only change code above this line
+}
+```
+
+### Pass Arguments to Avoid External Dependence in a Function
+
+Let's update the ```incrementer``` function to clearly declare its dependencies.
+
+Write the ```incrementer``` function so it takes an argument, and then returns a result after increasing the value by one.
+
+```javascript
+// The global variable
+var fixedValue = 4;
+
+// Only change code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+
+  // Only change code above this line
+}
+```
+
+### Refactor Global Variables Out of Functions
+
+Rewrite the code so the global array ```bookList``` is not changed inside either function. The ```add``` function should add the given ```bookName``` to the end of the array passed to it and return a new array (list). The ```remove``` function should remove the given ```bookName``` from the array passed to it.
