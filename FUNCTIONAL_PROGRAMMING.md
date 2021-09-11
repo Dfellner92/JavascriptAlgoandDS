@@ -291,7 +291,7 @@ var new_s = s.myMap(function(item) {
 console.log(new_s);
 ```
 
-###
+### Implement the filter method to extract data from an array
 
 The variable ```watchList``` holds an array of objects with information on several movies. Use a combination of ```filter``` and ```map``` on ```watchList``` to assign a new array of objects with only ```title``` and ```rating``` keys. The new array should only include objects where ```imdbRating``` is greater than or equal to 8.0. Note that the ```rating``` values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
 
@@ -307,4 +307,48 @@ filteredList = filteredList.filter((movie) => Number(movie.rating) > 8.0)
 console.log(filteredList);
 
 // Only change code above this line
+```
+
+### Implement the filter method on a prototype
+
+Write your own ```Array.prototype.myFilter()```, which should behave exactly like ```Array.prototype.filter()```. You should not use the built-in ```filter``` method. The ```Array``` instance can be accessed in the ```myFilter``` method using ```this```.
+
+```javascript
+// The global variable
+var s = [23, 65, 98, 5];
+
+Array.prototype.myFilter = function(callback) {
+  // Only change code below this line
+  var newArray = [];
+  this.forEach((x) => {
+    if (callback(x) === true) {
+      newArray.push(x);
+    }
+  });
+  // Only change code above this line
+  return newArray;
+};
+
+var new_s = s.myFilter(function(item) {
+  return item % 2 === 1;
+});
+
+console.log(new_s);
+```
+
+### Return Part of an Array Using the slice Method
+
+
+Use the ```slice``` method in the ```sliceArray``` function to return part of the ```anim``` array given the provided ```beginSlice``` and ```endSlice``` indices. The function should return an array.
+
+```javascript
+function sliceArray(anim, beginSlice, endSlice) {
+  // Only change code below this line
+  let newAnim = anim.slice(beginSlice, endSlice);
+  return newAnim;
+
+  // Only change code above this line
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+console.log(sliceArray(inputAnim, 1, 3));
 ```
