@@ -439,3 +439,40 @@ const squareList = arr => {
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
 ```
+
+### Sort an Array Alphabetically using the sort Method
+
+Use the ```sort``` method in the ```alphabeticalOrder``` function to sort the elements of ```arr``` in alphabetical order.
+
+```javascript
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+  return arr.sort();
+
+  // Only change code above this line
+}
+console.log(alphabeticalOrder(["a", "d", "c", "a", "z", "g"]));
+```
+
+### Return a Sorted Array Without Changing the Original Array
+
+Use the ```sort``` method in the ```nonMutatingSort``` function to sort the elements of an array in ascending order. The function should return a new array, and not mutate the ```globalArray``` variable.
+
+```javascript
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Only change code below this line
+  let newArr = [];
+  let newArr2 = newArr.concat(arr);
+  newArr2.sort((a, b) => (
+    a - b
+  ));
+  return newArr2;
+  // Only change code above this line
+}
+console.log(nonMutatingSort(globalArray));
+```
+
+### Split a String into an Array Using the split Method
+
+Use the ```split``` method inside the ```splitify``` function to split str into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation.
