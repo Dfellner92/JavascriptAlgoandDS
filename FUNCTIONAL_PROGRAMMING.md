@@ -352,3 +352,37 @@ function sliceArray(anim, beginSlice, endSlice) {
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 console.log(sliceArray(inputAnim, 1, 3));
 ```
+
+### Remove Elements from an Array Using slice Instead of splice
+
+Rewrite the function ```nonMutatingSplice``` by using ```slice``` instead of ```splice```. It should limit the provided ```cities``` array to a length of 3, and return a new array with only the first three items.
+
+Do not mutate the original array provided to the function.
+
+```javascript
+function nonMutatingSplice(cities) {
+  // Only change code below this line
+  let newArr = cities.slice(0, 3)
+  return newArr;
+
+  // Only change code above this line
+}
+var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+console.log(nonMutatingSplice(inputCities));
+```
+
+### Combine Two Arrays Using the concat Method
+
+Use the ```concat``` method in the ```nonMutatingConcat``` function to concatenate ```attach``` to the end of ```original```. The function should return the concatenated array.
+
+```javascript
+function nonMutatingConcat(original, attach) {
+  // Only change code below this line
+  return original.concat(attach);
+
+  // Only change code above this line
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+```
+
