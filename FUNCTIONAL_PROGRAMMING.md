@@ -408,5 +408,34 @@ nonMutatingPush(first, second);
 The variable ```watchList``` holds an array of objects with information on several movies. Use ```reduce``` to find the average IMDB rating of the movies directed by ```Christopher Nolan```. Recall from prior challenges how to ```filter``` data and ```map``` over it to pull what you need. You may need to create other variables, and return the average rating from ```getRating``` function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
 
 ```javascript
+function getRating(watchList){
+  // Only change code below this line
+  let arr = watchList.filter((director) => director["Director"] == "Christopher Nolan").map((rating) => Number(rating.imdbRating)).reduce((average, item) => 
+    average + item) / watchList.filter((director) => director["Director"] == "Christopher Nolan").length
+  
+  // .reduce((average, item) => {
+  //    average *= parseInt(item);
+  //  }, 1);
+   return arr;
+   
 
+  // Only change code above this line
+}
+console.log(getRating(watchList));
+```
+
+### Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem
+
+Complete the code for the ```squareList``` function using any combination of ```map()```, ```filter()```, and ```reduce()```. The function should return a new array containing the squares of only the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it. An example of an array of real numbers is ```[-3, 4.8, 5, 3, -3.2]```.
+
+```javascript
+const squareList = arr => {
+  // Only change code below this line
+  let newArr = arr.filter((num) => num > 0).filter((num) => num % 1 === 0).map((num) => num * num);
+  return newArr;
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
 ```
