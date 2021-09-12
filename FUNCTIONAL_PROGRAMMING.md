@@ -478,7 +478,14 @@ console.log(nonMutatingSort(globalArray));
 Use the ```split``` method inside the ```splitify``` function to ```split``` str into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation.
 
 ```javascript
+function splitify(str) {
+  // Only change code below this line
+  let regex = /[ ,-.]/;
+  return str.split(regex)
 
+  // Only change code above this line
+}
+console.log(splitify("Hello World,I-am code"));
 ```
 
 ### Combine an Array into a String Using the join Method
@@ -486,10 +493,17 @@ Use the ```split``` method inside the ```splitify``` function to ```split``` str
 Use the ```join``` method (among others) inside the ```sentensify``` function to make a sentence from the words in the string ```str```. The function should return a string. For example, ```I-like-Star-Wars``` would be converted to ```I like Star Wars```. For this challenge, do not use the ```replace``` method.
 
 ```javascript
+function sentensify(str) {
+  // Only change code below this line
+  let regex = /[.:;?!~,&|()<>{}+-]/ig;
+  return str.split(regex).join(' ');
+
+  // Only change code above this line
+}
+console.log(sentensify("May-the-force-be-with-you"));
 ```
 
 ### Apply Functional Programming to Convert Strings to URL Slugs
-
 
 Fill in the ```urlSlug``` function so it converts a string ```title``` and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use ```replace```. Here are the requirements:
 
@@ -502,5 +516,42 @@ The output should be all lower-cased letters
 The output should not have any spaces
 
 ```javascript
+// Only change code below this line
+function urlSlug(title) {
+  let regex = /\s+/;
+  return title.toLowerCase().trim(' ').split(regex).join('-');
+}
+// Only change code above this line
 
+console.log(urlSlug("The Last of the Summer Wine"));
 ```
+
+### Use the every Method to Check that Every Element in an Array Meets a Criteria
+
+
+Use the ```every``` method inside the ```checkPositive``` function to check if every element in ```arr``` is positive. The function should return a Boolean value.
+
+```javascript
+function checkPositive(arr) {
+  // Only change code below this line
+  return arr.every((currentValue) => {
+    return currentValue > 0;
+  })
+  // Only change code above this line
+}
+console.log(checkPositive([1, 2, 3, -4, 5]));
+```
+
+### Use the some Method to Check that Any Elements in an Array Meet a Criteria
+
+Use the ```some``` method inside the ```checkPositive``` function to check if any element in ```arr``` is positive. The function should return a Boolean value.
+
+```javascript
+function checkPositive(arr) {
+  return arr.some(elem => elem > 0);
+}
+```
+
+### Introduction to Currying and Partial Application
+
+Fill in the body of the ```add``` function so it uses currying to add parameters ```x```, ```y```, and ```z```.
