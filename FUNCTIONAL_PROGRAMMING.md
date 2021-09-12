@@ -475,4 +475,32 @@ console.log(nonMutatingSort(globalArray));
 
 ### Split a String into an Array Using the split Method
 
-Use the ```split``` method inside the ```splitify``` function to split str into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation.
+Use the ```split``` method inside the ```splitify``` function to ```split``` str into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation.
+
+```javascript
+
+```
+
+### Combine an Array into a String Using the join Method
+
+Use the ```join``` method (among others) inside the ```sentensify``` function to make a sentence from the words in the string ```str```. The function should return a string. For example, ```I-like-Star-Wars``` would be converted to ```I like Star Wars```. For this challenge, do not use the ```replace``` method.
+
+```javascript
+```
+
+### Apply Functional Programming to Convert Strings to URL Slugs
+
+
+Fill in the ```urlSlug``` function so it converts a string ```title``` and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use ```replace```. Here are the requirements:
+
+The input is a string with spaces and title-cased words
+
+The output is a string with the spaces between words replaced by a hyphen (```-```)
+
+The output should be all lower-cased letters
+
+The output should not have any spaces
+
+```javascript
+
+```
