@@ -241,3 +241,19 @@ console.log(bouncer([false, null, 0, NaN, undefined, ""]));
 ### Where do I Belong
 
 Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+### Chunky Monkey
+
+Write a function that splits an array (first argument) into groups the length of ```size``` (second argument) and returns them as a two-dimensional array.
+
+```javascript
+function chunkArrayInGroups(arr, size) {
+  let newArr = [];
+  for (let i = 0; arr.length; i++) {
+    newArr.push(arr.splice(0, size));
+  }
+  return newArr;
+}
+
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
+```
