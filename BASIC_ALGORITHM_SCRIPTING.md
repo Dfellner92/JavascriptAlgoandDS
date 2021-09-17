@@ -242,6 +242,25 @@ console.log(bouncer([false, null, 0, NaN, undefined, ""]));
 
 Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
 
+```javascript
+function getIndexToIns(arr, num) {
+  let zip = [];
+  arr.sort((a, b) => {
+    return a - b
+  })
+  for (let i = 0; i < arr.length; i++) {
+   if (arr[arr.length - 1] < num) {
+      return arr.length;
+    } else if (arr[i] < num && arr[i + 1] >= num ) {
+      return i + 1;
+    }
+  }
+  return zip.length;
+}
+
+console.log(getIndexToIns([], 1));
+```
+
 ### Chunky Monkey
 
 Write a function that splits an array (first argument) into groups the length of ```size``` (second argument) and returns them as a two-dimensional array.
