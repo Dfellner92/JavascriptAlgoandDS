@@ -100,6 +100,24 @@ function fearNotLetter(str) {
 console.log(fearNotLetter("stvwx"));
 ```
 
+### Sorted Union
+
+Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+```javascript
+function uniteUnique(arr) {
+  let newArr = [...arr];
+  for (let i = 1; i < arguments.length; i++) {
+    arguments[i].forEach((elem) =>
+      newArr.includes(elem) ? newArr : newArr.push(elem)
+    );
+  }
+  return newArr;
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+```
+
 ### Drop it
 
 Given the array `arr`, iterate through and remove each element starting from the first element (the 0 index) until the function `func` returns `true` when the iterated element is passed through it.
