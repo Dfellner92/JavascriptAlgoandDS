@@ -145,3 +145,32 @@ console.log(
   })
 );
 ```
+
+### Convert HTML
+
+Convert the characters `&`, `<`, `>`, `"` (double quote), and `'` (apostrophe), in a string to their corresponding HTML entities.
+
+```javascript
+function convertHTML(str) {
+  let newStr = str;
+  if (str.includes('&')) {
+     newStr = newStr.replaceAll('&', '&amp;');
+  }
+  if (str.includes('<')) {
+     newStr = newStr.replaceAll('<', '&lt;');
+  }
+  if (str.includes('>')) {
+     newStr = newStr.replaceAll('>', '&gt;');
+  }
+  if (str.includes('\'')) {
+     newStr = newStr.replaceAll('\'', '&apos;');
+  }
+  if (str.includes('\"')) {
+     newStr = newStr.replaceAll('\"', '&quot;');
+  }
+  return newStr;
+}
+
+console.log(convertHTML("<>"));
+console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+```
