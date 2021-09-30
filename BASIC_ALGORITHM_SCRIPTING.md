@@ -229,7 +229,7 @@ function bouncer(arr) {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i]) {
-      newArr.push(arr[i])
+      newArr.push(arr[i]);
     }
   }
   return newArr;
@@ -246,12 +246,12 @@ Return the lowest index at which a value (second argument) should be inserted in
 function getIndexToIns(arr, num) {
   let zip = [];
   arr.sort((a, b) => {
-    return a - b
-  })
+    return a - b;
+  });
   for (let i = 0; i < arr.length; i++) {
-   if (arr[arr.length - 1] < num) {
+    if (arr[arr.length - 1] < num) {
       return arr.length;
-    } else if (arr[i] < num && arr[i + 1] >= num ) {
+    } else if (arr[i] < num && arr[i + 1] >= num) {
       return i + 1;
     }
   }
@@ -261,9 +261,27 @@ function getIndexToIns(arr, num) {
 console.log(getIndexToIns([], 1));
 ```
 
+### Mutations
+
+Return `true` if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+```javascript
+function mutation(arr) {
+  let newArr = arr.map((elem) => elem.toLowerCase().split(""));
+  for (let i = 0; i < newArr[1].length; i++) {
+    if (!newArr[0].includes(newArr[1][i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(mutation(["hello", "hey"]));
+```
+
 ### Chunky Monkey
 
-Write a function that splits an array (first argument) into groups the length of ```size``` (second argument) and returns them as a two-dimensional array.
+Write a function that splits an array (first argument) into groups the length of `size` (second argument) and returns them as a two-dimensional array.
 
 ```javascript
 function chunkArrayInGroups(arr, size) {
