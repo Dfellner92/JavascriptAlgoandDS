@@ -21,6 +21,19 @@ function sumAll(arr) {
 console.log(sumAll([10, 5]));
 ```
 
+### Spinal Tap Case
+
+Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+```javascript
+function spinalCase(str) {
+  return str
+    .replaceAll(/([a-z])([A-Z])/g, "$1 $2")
+    .replaceAll(/[_ ]/g, "-")
+    .toLowerCase();
+}
+```
+
 ### Diff Two Arrays
 
 Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
@@ -153,20 +166,20 @@ Convert the characters `&`, `<`, `>`, `"` (double quote), and `'` (apostrophe), 
 ```javascript
 function convertHTML(str) {
   let newStr = str;
-  if (str.includes('&')) {
-     newStr = newStr.replaceAll('&', '&amp;');
+  if (str.includes("&")) {
+    newStr = newStr.replaceAll("&", "&amp;");
   }
-  if (str.includes('<')) {
-     newStr = newStr.replaceAll('<', '&lt;');
+  if (str.includes("<")) {
+    newStr = newStr.replaceAll("<", "&lt;");
   }
-  if (str.includes('>')) {
-     newStr = newStr.replaceAll('>', '&gt;');
+  if (str.includes(">")) {
+    newStr = newStr.replaceAll(">", "&gt;");
   }
-  if (str.includes('\'')) {
-     newStr = newStr.replaceAll('\'', '&apos;');
+  if (str.includes("'")) {
+    newStr = newStr.replaceAll("'", "&apos;");
   }
-  if (str.includes('\"')) {
-     newStr = newStr.replaceAll('\"', '&quot;');
+  if (str.includes('"')) {
+    newStr = newStr.replaceAll('"', "&quot;");
   }
   return newStr;
 }
