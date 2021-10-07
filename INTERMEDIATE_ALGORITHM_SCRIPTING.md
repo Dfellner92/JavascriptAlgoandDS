@@ -34,6 +34,41 @@ function spinalCase(str) {
 }
 ```
 
+### Search and Replace
+
+Perform a search and replace on the sentence using the arguments provided and return the new sentence.
+
+First argument is the sentence to perform the search and replace on.
+
+Second argument is the word that you will be replacing (before).
+
+Third argument is what you will be replacing the second argument with (after).
+
+```javascript
+function myReplace(str, before, after) {
+  let newStr = str.split(" ");
+  let upperRegex = /[A-Z]/;
+  let isBeforeCapitalized = upperRegex.test(before[0]);
+  let isAfterCapitalized = upperRegex.test(after[0]);
+  for (let i = 0; i < newStr.length; i++) {
+    if (isBeforeCapitalized && newStr[i] === before) {
+      let first = after.slice(0, 1).toUpperCase();
+      let rest = after.slice(1);
+      newStr[i] = first + rest;
+    } else if (isAfterCapitalized && newStr[i] === before) {
+      let first = after.slice(0, 1).toLowerCase();
+      let rest = after.slice(1);
+      newStr[i] = first + rest;
+    } else if (newStr[i] === before) {
+      newStr[i] = after;
+    }
+  }
+  return newStr.join(" ");
+}
+
+console.log(myReplace("I think we should look up there", "up", "Down"));
+```
+
 ### Diff Two Arrays
 
 Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
