@@ -34,6 +34,38 @@ function spinalCase(str) {
 }
 ```
 
+### Sum all Primes
+
+```javascript
+function sumPrimes(num) {
+  let index = 1;
+  let sumArray = [];
+  let primes = [];
+  let sum = 0;
+  while (index <= num) {
+    sumArray.push(index);
+    index++;
+  }
+  sumArray.forEach((number) => {
+    let i = 1;
+    let arr = [];
+    while (i <= number) {
+      if (number % i === 0) {
+        arr.push(i);
+      }
+      i++;
+    }
+    if (arr.length === 2) {
+      primes.push(number);
+    }
+  });
+  primes.forEach((number) => (sum += number));
+  return sum;
+}
+
+console.log(sumPrimes(10));
+```
+
 ### Search and Replace
 
 Perform a search and replace on the sentence using the arguments provided and return the new sentence.
