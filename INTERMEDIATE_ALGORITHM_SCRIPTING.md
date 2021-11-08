@@ -107,17 +107,13 @@ Compare two arrays and return a new array with any items only found in one of th
 
 ```javascript
 function diffArray(arr1, arr2) {
-  var newArr = [];
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr2.indexOf(arr1[i]) === -1) {
-      newArr.push(arr1[i]);
-    }
-  }
-  for (let j = 0; j < arr2.length; j++) {
-    if (arr1.indexOf(arr2[j]) === -1) {
-      newArr.push(arr2[j]);
-    }
-  }
+  let newArr = [];
+  arr1.forEach((element) =>
+    arr2.includes(element) ? newArr : newArr.push(element)
+  );
+  arr2.forEach((element) =>
+    arr1.includes(element) ? newArr : newArr.push(element)
+  );
   return newArr;
 }
 
