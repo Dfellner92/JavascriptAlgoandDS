@@ -6,16 +6,14 @@ For example, `sumAll([4,1])` should return `10` because sum of all the numbers b
 
 ```javascript
 function sumAll(arr) {
-  arr.sort((a, b) => {
-    return a - b;
-  });
-  let arrInit = arr[0];
-  let total = 0;
-  while (arrInit <= arr[1]) {
-    total += arrInit;
-    arrInit++;
+  let sortedArr = arr.sort((a, b) => a - b);
+  let sum = sortedArr[0];
+  let addend = sortedArr[0] + 1;
+  while (addend <= sortedArr[1]) {
+    sum += addend;
+    addend++;
   }
-  return total;
+  return sum;
 }
 
 console.log(sumAll([10, 5]));
