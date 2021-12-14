@@ -78,24 +78,14 @@ Third argument is what you will be replacing the second argument with (after).
 
 ```javascript
 function myReplace(str, before, after) {
-  let newStr = str.split(" ");
   let upperRegex = /[A-Z]/;
   let isBeforeCapitalized = upperRegex.test(before[0]);
-  let isAfterCapitalized = upperRegex.test(after[0]);
-  for (let i = 0; i < newStr.length; i++) {
-    if (isBeforeCapitalized && newStr[i] === before) {
-      let first = after.slice(0, 1).toUpperCase();
-      let rest = after.slice(1);
-      newStr[i] = first + rest;
-    } else if (isAfterCapitalized && newStr[i] === before) {
-      let first = after.slice(0, 1).toLowerCase();
-      let rest = after.slice(1);
-      newStr[i] = first + rest;
-    } else if (newStr[i] === before) {
-      newStr[i] = after;
-    }
-  }
-  return newStr.join(" ");
+  let casedAfter = isBeforeCapitalized
+    ? after[0].toUpperCase() + after.slice(1)
+    : after[0].toLowerCase() + after.slice(1);
+  const strArr = str.split(" ");
+  strArr.splice(strArr.indexOf(before), 1, casedAfter);
+  return strArr.join(" ");
 }
 
 console.log(myReplace("I think we should look up there", "up", "Down"));
