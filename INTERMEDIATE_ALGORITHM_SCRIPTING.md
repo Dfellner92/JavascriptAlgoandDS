@@ -382,4 +382,23 @@ function sumFibs(num) {
 console.log(sumFibs(75025));
 ```
 
-### 
+### Steamroller
+
+```javascript
+function steamrollArray(arr) {
+  let flattenedArray = [];
+
+  flatten(arr);
+
+  function flatten(arr) {
+    arr.forEach((element) => {
+      if (Array.isArray(element)) {
+        flatten(element);
+      } else {
+        flattenedArray.push(element);
+      }
+    });
+  }
+  return flattenedArray;
+}
+```
